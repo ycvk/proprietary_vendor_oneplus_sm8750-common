@@ -10291,6 +10291,46 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libqccdme",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/libqccdme.so",
+            ],
+            shared_libs: [
+                "libcurl",
+                "libssl",
+                "libcrypto",
+                "libcutils",
+                "liblog",
+                "libutils",
+                "libbase",
+                "libfmq",
+                "libhidlbase",
+                "libbinder",
+                "libbinder_ndk",
+                "vendor.qti.hardware.qccvndhal@1.0",
+                "vendor.qti.hardware.qccsyshal@1.2",
+                "android.hardware.common-V2-ndk",
+                "vendor.qti.qccvndhal_aidl-V1-ndk",
+                "vendor.qti.qccsyshal_aidl-V1-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libqccfileservice",
     owner: "oneplus",
     strip: {
